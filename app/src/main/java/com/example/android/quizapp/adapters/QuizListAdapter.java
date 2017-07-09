@@ -45,7 +45,7 @@ public class QuizListAdapter extends RecyclerView.Adapter<QuizListAdapter.QuizVi
     @Override
     public void onBindViewHolder(QuizViewHolder holder, int position) {
         Category category = list.get(position);
-        holder.topicName.setText(category.categoryName);
+        holder.topicName.setText(category.getCategoryName());
 
     }
 
@@ -54,7 +54,7 @@ public class QuizListAdapter extends RecyclerView.Adapter<QuizListAdapter.QuizVi
         return list.size();
     }
 
-    class QuizViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+    class QuizViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         TextView topicName;
 
@@ -70,10 +70,10 @@ public class QuizListAdapter extends RecyclerView.Adapter<QuizListAdapter.QuizVi
             String TAG = "ye raha";
 
             Cursor res = db.rawQuery("select * from " + DBContract.DBEntry.TABLE_NAME_2 + " where " +
-                    DBContract.DBEntry.COLUMN_ID + "=" + list.get(getAdapterPosition()).id + ";", null);
+                    DBContract.DBEntry.COLUMN_ID + "=" + list.get(getAdapterPosition()).getId() + ";", null);
             questionList.clear();
 
-            for(res.moveToFirst(); !res.isAfterLast(); res.moveToNext()){
+            for (res.moveToFirst(); !res.isAfterLast(); res.moveToNext()) {
                 Question ques = new Question(res.getString(res.getColumnIndex("question")), res.getString(res.getColumnIndex("options")),
                         res.getString(res.getColumnIndex("answer")));
                 questionList.add(ques);
@@ -82,7 +82,7 @@ public class QuizListAdapter extends RecyclerView.Adapter<QuizListAdapter.QuizVi
             res.close();
             Intent intent = new Intent(context, QuizDetailsActivity.class);
             intent.putExtra("list", (Serializable) questionList);
-            intent.putExtra("topic", list.get(getAdapterPosition()).categoryName);
+            intent.putExtra("topic", list.get(getAdapterPosition()).getCategoryName());
             context.startActivity(intent);
         }
     }

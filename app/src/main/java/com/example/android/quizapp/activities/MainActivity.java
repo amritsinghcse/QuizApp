@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
@@ -31,13 +32,8 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    private RecyclerView quizList;
-    private QuizListAdapter quizListAdapter;
     DBHelper DBHelper;
     List<Category> categoryList = new ArrayList<>();
-    private View navHeaderView;
-    private TextView nameField;
-    private TextView emailField;
 
 
     @Override
@@ -51,16 +47,16 @@ public class MainActivity extends AppCompatActivity
         SQLiteDatabase db = DBHelper.getReadableDatabase();
         Cursor res = db.rawQuery("select * from " + DBContract.DBEntry.TABLE_NAME + ";", null);
 
-        for(res.moveToFirst(); !res.isAfterLast(); res.moveToNext()){
+        for (res.moveToFirst(); !res.isAfterLast(); res.moveToNext()) {
             Category category = new Category(res.getInt(res.getColumnIndex("_id")), res.getString(res.getColumnIndex("Topic")));
             categoryList.add(category);
         }
 
         res.close();
 
-        quizList = (RecyclerView) findViewById(R.id.quiz_list);
+        RecyclerView quizList = (RecyclerView) findViewById(R.id.quiz_list);
         quizList.setHasFixedSize(true);
-        quizListAdapter = new QuizListAdapter(this, categoryList, db);
+        QuizListAdapter quizListAdapter = new QuizListAdapter(this, categoryList, db);
         quizList.setLayoutManager(new GridLayoutManager(this, 2));
         quizList.setAdapter(quizListAdapter);
 
@@ -69,7 +65,7 @@ public class MainActivity extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                Snackbar.make(view, "To add Quiz. In Progress", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
         });
@@ -82,9 +78,9 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-        navHeaderView = navigationView.getHeaderView(0);
-        nameField = (TextView) navHeaderView.findViewById(R.id.nav_text1);
-        emailField = (TextView) navHeaderView.findViewById(R.id.nav_text2);
+        View navHeaderView = navigationView.getHeaderView(0);
+        TextView nameField = (TextView) navHeaderView.findViewById(R.id.nav_text1);
+        TextView emailField = (TextView) navHeaderView.findViewById(R.id.nav_text2);
         nameField.setText(getIntent().getStringExtra("username"));
         emailField.setText(getIntent().getStringExtra("useremail"));
 
@@ -113,13 +109,12 @@ public class MainActivity extends AppCompatActivity
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
 
-
         return super.onOptionsItemSelected(item);
     }
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 

@@ -32,9 +32,9 @@ public class AllUsersAdapter extends RecyclerView.Adapter<AllUsersAdapter.UsersV
 
     @Override
     public void onBindViewHolder(UsersViewHolder holder, int position) {
-        holder.name.setText(users.get(position).name);
-        holder.email.setText(users.get(position).email);
-        holder.password.setText(users.get(position).password);
+        holder.name.setText(users.get(position).getName());
+        holder.email.setText(users.get(position).getEmail());
+        holder.password.setText(users.get(position).getPassword());
     }
 
     @Override
@@ -42,7 +42,7 @@ public class AllUsersAdapter extends RecyclerView.Adapter<AllUsersAdapter.UsersV
         return users.size();
     }
 
-    class UsersViewHolder extends RecyclerView.ViewHolder{
+    class UsersViewHolder extends RecyclerView.ViewHolder {
 
         TextView name, email, password;
 

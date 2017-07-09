@@ -5,9 +5,11 @@ import android.provider.BaseColumns;
 
 public class DBContract {
 
-    private DBContract(){}
+    private DBContract() {
+    }
 
-    public static class DBEntry implements BaseColumns{
+    @SuppressWarnings("WeakerAccess")
+    public static class DBEntry implements BaseColumns {
         public static final String TABLE_NAME = "topics";
         public static final String COLUMN_TOPIC_NAME = "Topic";
         public static final String TABLE_NAME_2 = "questions";

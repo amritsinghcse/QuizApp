@@ -31,11 +31,11 @@ public class DBHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         sqLiteDatabase.execSQL("CREATE TABLE " + DBContract.DBEntry.TABLE_NAME + " (" +
-        DBContract.DBEntry._ID + " INTEGER PRIMARY KEY," + DBContract.DBEntry.COLUMN_TOPIC_NAME + " TEXT);");
+                DBContract.DBEntry._ID + " INTEGER PRIMARY KEY," + DBContract.DBEntry.COLUMN_TOPIC_NAME + " TEXT);");
 
-        sqLiteDatabase.execSQL("CREATE TABLE " + DBContract.DBEntry.TABLE_NAME_2 + " ("+
+        sqLiteDatabase.execSQL("CREATE TABLE " + DBContract.DBEntry.TABLE_NAME_2 + " (" +
                 DBContract.DBEntry.COLUMN_ID + " INTEGER NOT NULL," + DBContract.DBEntry.COLUMN_QUESTION + " TEXT NOT NULL,"
-         + DBContract.DBEntry.COLUMN_OPTIONS + " TEXT NOT NULL," + DBContract.DBEntry.COLUMN_ANSWER + " TEXT NOT NULL);");
+                + DBContract.DBEntry.COLUMN_OPTIONS + " TEXT NOT NULL," + DBContract.DBEntry.COLUMN_ANSWER + " TEXT NOT NULL);");
 
         sqLiteDatabase.execSQL("CREATE TABLE " + TABLE_USER + " ("
                 + COLUMN_USER_NAME + " TEXT,"
@@ -46,7 +46,6 @@ public class DBHelper extends SQLiteOpenHelper {
         insertQuestions(sqLiteDatabase);
 
     }
-
 
 
     @Override
@@ -60,12 +59,11 @@ public class DBHelper extends SQLiteOpenHelper {
     }
 
 
-
-    private void insertCategories(SQLiteDatabase sqLiteDatabase){
+    private void insertCategories(SQLiteDatabase sqLiteDatabase) {
         List<String> list = Arrays.asList("Sports", "Politics", "History");
         ContentValues cv = new ContentValues();
-        for(int i = 0; i< list.size(); i++){
-            cv.put(DBContract.DBEntry._ID, i+1);
+        for (int i = 0; i < list.size(); i++) {
+            cv.put(DBContract.DBEntry._ID, i + 1);
             cv.put(DBContract.DBEntry.COLUMN_TOPIC_NAME, list.get(i));
             sqLiteDatabase.insert(DBContract.DBEntry.TABLE_NAME, null, cv);
             cv.clear();
@@ -117,12 +115,12 @@ public class DBHelper extends SQLiteOpenHelper {
 
         ContentValues cv = new ContentValues();
 
-        for(int i = 0; i < 3; i++){
-            for(int j = 0; j < 5; j++){
-                cv.put(DBContract.DBEntry.COLUMN_ID, i+1);
-                cv.put(DBContract.DBEntry.COLUMN_QUESTION, questions.get(5*i + j));
-                cv.put(DBContract.DBEntry.COLUMN_OPTIONS, options.get(5*i + j));
-                cv.put(DBContract.DBEntry.COLUMN_ANSWER, answers.get(5*i + j));
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 5; j++) {
+                cv.put(DBContract.DBEntry.COLUMN_ID, i + 1);
+                cv.put(DBContract.DBEntry.COLUMN_QUESTION, questions.get(5 * i + j));
+                cv.put(DBContract.DBEntry.COLUMN_OPTIONS, options.get(5 * i + j));
+                cv.put(DBContract.DBEntry.COLUMN_ANSWER, answers.get(5 * i + j));
                 sqLiteDatabase.insert(DBContract.DBEntry.TABLE_NAME_2, null, cv);
                 cv.clear();
             }
@@ -134,13 +132,15 @@ public class DBHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();
-        values.put(COLUMN_USER_NAME, user.name);
-        values.put(COLUMN_USER_EMAIL, user.email);
-        values.put(COLUMN_USER_PASSWORD, user.password);
+        values.put(COLUMN_USER_NAME, user.getName());
+        values.put(COLUMN_USER_EMAIL, user.getEmail());
+        values.put(COLUMN_USER_PASSWORD, user.getPassword());
 
         db.insert(TABLE_USER, null, values);
         db.close();
     }
+
+
     public List<User> getAllUser() {
         // array of columns to fetch
         String[] columns = {

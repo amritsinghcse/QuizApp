@@ -33,7 +33,7 @@ public class QuizDetailsActivity extends AppCompatActivity {
         option4 = (TextView) findViewById(R.id.option_4);
         gameOverLayout = findViewById(R.id.game_over_layout);
         topic.setText(getIntent().getStringExtra("topic"));
-       setUI();
+        setUI();
         gameState = true;
 
 
@@ -42,7 +42,7 @@ public class QuizDetailsActivity extends AppCompatActivity {
     public void optionClicked(View view) {
         if (gameState) {
             TextView view1 = (TextView) view;
-            if (view1.getText().toString().equals(list.get(questionCount).answer)) {
+            if (view1.getText().toString().equals(list.get(questionCount).getAnswer())) {
                 score++;
                 Toast.makeText(this, "Correct Answer!", Toast.LENGTH_SHORT).show();
             } else {
@@ -69,13 +69,12 @@ public class QuizDetailsActivity extends AppCompatActivity {
         }
     }
 
-        public void setUI(){
-        question.setText(list.get(questionCount).question);
-        option1.setText(list.get(questionCount).options[0]);
-        option2.setText(list.get(questionCount).options[1]);
-        option3.setText(list.get(questionCount).options[2]);
-        option4.setText(list.get(questionCount).options[3]);
-
+    public void setUI() {
+        question.setText(list.get(questionCount).getQuestion());
+        option1.setText(list.get(questionCount).getOptions()[0]);
+        option2.setText(list.get(questionCount).getOptions()[1]);
+        option3.setText(list.get(questionCount).getOptions()[2]);
+        option4.setText(list.get(questionCount).getOptions()[3]);
 
 
     }

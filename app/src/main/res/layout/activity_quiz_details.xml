@@ -1,134 +1,140 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent">
 
-
-
-
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:gravity="center_horizontal"
-    tools:context="com.example.android.quizapp.activities.QuizDetailsActivity"
-    android:orientation="vertical"
-    >
-
-    <TextView
-        android:id="@+id/topic"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Topic"
-        android:textColor="@android:color/black"
-        android:textSize="20sp"
-        android:gravity="center"
-        />
-
-
-
-    <TextView
-        android:id="@+id/question"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:gravity="center"
-        android:textStyle="bold"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:text="What is the name of the book by JK Rowling?"
-        android:textColor="@android:color/black"
-        android:textSize="28sp"
-        android:layout_marginBottom="48dp"/>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
         android:orientation="vertical"
-        android:layout_marginBottom="32dp"
-        android:gravity="center_horizontal">
+        tools:context="com.example.android.quizapp.activities.QuizDetailsActivity">
 
-    <TextView
-        android:id="@+id/option_1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@android:color/black"
-        android:textSize="20sp"
-        android:onClick="optionClicked"
-        android:text="Option 1"
-        android:layout_marginBottom="16dp"/>
-    <TextView
-        android:id="@+id/option_2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@android:color/black"
-        android:layout_marginBottom="16dp"
-        android:onClick="optionClicked"
-        android:textSize="20sp"
-        android:text="Option 2"/>
-    <TextView
-        android:id="@+id/option_3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@android:color/black"
-        android:layout_marginBottom="16dp"
-        android:textSize="20sp"
-        android:onClick="optionClicked"
-        android:text="Option 3"/>
-    <TextView
-        android:id="@+id/option_4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@android:color/black"
-        android:layout_marginBottom="16dp"
-        android:textSize="20sp"
-        android:onClick="optionClicked"
-        android:text="Option 4"/>
+        <TextView
+            android:id="@+id/topic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="Topic"
+            android:textColor="@android:color/black"
+            android:textSize="20sp" />
+
+
+        <TextView
+            android:id="@+id/question"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="48dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:text="What is the name of the book by JK Rowling?"
+            android:textColor="@android:color/black"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/option_1"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginBottom="16dp"
+                android:background="#F0F4C3"
+                android:gravity="center"
+                android:onClick="optionClicked"
+                android:text="Option 1"
+                android:textColor="@android:color/black"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/option_2"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginBottom="16dp"
+                android:background="#F0F4C3"
+                android:gravity="center"
+                android:onClick="optionClicked"
+                android:text="Option 2"
+                android:textColor="@android:color/black"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/option_3"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginBottom="16dp"
+                android:background="#F0F4C3"
+                android:gravity="center"
+                android:onClick="optionClicked"
+                android:text="Option 3"
+                android:textColor="@android:color/black"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/option_4"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginBottom="16dp"
+                android:background="#F0F4C3"
+                android:gravity="center"
+                android:onClick="optionClicked"
+                android:text="Option 4"
+                android:textColor="@android:color/black"
+                android:textSize="20sp" />
 
 
         </LinearLayout>
 
-</LinearLayout>
+    </LinearLayout>
+
     <LinearLayout
         android:id="@+id/game_over_layout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@android:color/holo_orange_light"
         android:orientation="vertical"
         android:padding="16dp"
-        android:background="@android:color/holo_orange_light"
-        android:layout_gravity="center"
         android:visibility="invisible">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Your score is: "
-            android:textSize="24sp"
             android:textColor="@android:color/black"
-            />
+            android:textSize="24sp" />
 
         <TextView
             android:id="@+id/score_textview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="4/5"
             android:layout_gravity="center"
-            android:textSize="24sp"
+            android:text="4/5"
             android:textColor="@android:color/black"
-            />
+            android:textSize="24sp" />
 
         <Button
             android:id="@+id/play_again_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
             android:layout_gravity="center"
-            android:text="PLAY AGAIN?"/>
+            android:layout_marginTop="8dp"
+            android:text="PLAY AGAIN?" />
 
     </LinearLayout>
 </android.support.design.widget.CoordinatorLayout>

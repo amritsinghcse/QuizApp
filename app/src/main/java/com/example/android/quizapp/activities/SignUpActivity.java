@@ -48,8 +48,8 @@ public class SignUpActivity extends AppCompatActivity {
                 dbHelper.addUser(user);
                 Toast.makeText(SignUpActivity.this, "SignUp success!", Toast.LENGTH_SHORT).show();
                 Intent i = new Intent(SignUpActivity.this, MainActivity.class);
-                i.putExtra("username", user.name);
-                i.putExtra("useremail", user.email);
+                i.putExtra("username", user.getName());
+                i.putExtra("useremail", user.getEmail());
                 startActivity(i);
                 finish();
             }
