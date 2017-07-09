@@ -13,7 +13,7 @@ public class QuizDetails extends AppCompatActivity {
     List<Question> list;
     public static final String TAG = "Ye raha";
     TextView topic, question, option1, option2, option3, option4;
-    int score = 0;
+    int score = 0, questionCount = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,23 +27,32 @@ public class QuizDetails extends AppCompatActivity {
         option3 = (TextView) findViewById(R.id.option_3);
         option4 = (TextView) findViewById(R.id.option_4);
         topic.setText(getIntent().getStringExtra("topic"));
-        question.setText(list.get(0).question);
-        option1.setText(list.get(0).options[0]);
-        option2.setText(list.get(0).options[1]);
-        option3.setText(list.get(0).options[2]);
-        option4.setText(list.get(0).options[3]);
+       setUI();
 
 
     }
 
-    public void nextQues(View view) {
+    public void optionClicked(View view) {
         TextView view1 = (TextView) view;
-        if (view1.getText().toString().equals(list.get(0).answer)) {
+        if (view1.getText().toString().equals(list.get(questionCount).answer)) {
             score++;
             Toast.makeText(this, "Correct Answer!", Toast.LENGTH_SHORT).show();
         } else {
             Toast.makeText(this, "Wrong Answer!", Toast.LENGTH_SHORT).show();
-
         }
+        questionCount++;
+        if(questionCount < 5)
+            setUI();
+    }
+
+        public void setUI(){
+        question.setText(list.get(questionCount).question);
+        option1.setText(list.get(questionCount).options[0]);
+        option2.setText(list.get(questionCount).options[1]);
+        option3.setText(list.get(questionCount).options[2]);
+        option4.setText(list.get(questionCount).options[3]);
+
+
+
     }
 }
