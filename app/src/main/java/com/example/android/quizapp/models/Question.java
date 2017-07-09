@@ -1,4 +1,4 @@
-package com.example.android.quizapp;
+package com.example.android.quizapp.models;
 
 
 import java.io.Serializable;

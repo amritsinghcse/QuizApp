@@ -1,4 +1,4 @@
-package com.example.android.quizapp;
+package com.example.android.quizapp.adapters;
 
 import android.content.Context;
 import android.content.Intent;
@@ -9,6 +9,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import com.example.android.quizapp.activities.QuizDetailsActivity;
+import com.example.android.quizapp.R;
+import com.example.android.quizapp.database.DBContract;
+import com.example.android.quizapp.models.Category;
+import com.example.android.quizapp.models.Question;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -74,7 +80,7 @@ public class QuizListAdapter extends RecyclerView.Adapter<QuizListAdapter.QuizVi
             }
 
             res.close();
-            Intent intent = new Intent(context, QuizDetails.class);
+            Intent intent = new Intent(context, QuizDetailsActivity.class);
             intent.putExtra("list", (Serializable) questionList);
             intent.putExtra("topic", list.get(getAdapterPosition()).categoryName);
             context.startActivity(intent);

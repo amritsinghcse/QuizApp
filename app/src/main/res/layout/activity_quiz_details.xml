@@ -1,11 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+
+
+
+<LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center_horizontal"
-    tools:context="com.example.android.quizapp.QuizDetails"
-    android:orientation="vertical">
+    tools:context="com.example.android.quizapp.activities.QuizDetailsActivity"
+    android:orientation="vertical"
+    >
 
     <TextView
         android:id="@+id/topic"
@@ -86,3 +95,40 @@
         </LinearLayout>
 
 </LinearLayout>
+    <LinearLayout
+        android:id="@+id/game_over_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:background="@android:color/holo_orange_light"
+        android:layout_gravity="center"
+        android:visibility="invisible">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Your score is: "
+            android:textSize="24sp"
+            android:textColor="@android:color/black"
+            />
+
+        <TextView
+            android:id="@+id/score_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4/5"
+            android:layout_gravity="center"
+            android:textSize="24sp"
+            android:textColor="@android:color/black"
+            />
+
+        <Button
+            android:id="@+id/play_again_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_gravity="center"
+            android:text="PLAY AGAIN?"/>
+
+    </LinearLayout>
+</android.support.design.widget.CoordinatorLayout>
