@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity
 
         quizList = (RecyclerView) findViewById(R.id.quiz_list);
         quizList.setHasFixedSize(true);
-        quizListAdapter = new QuizListAdapter(this, categoryList);
+        quizListAdapter = new QuizListAdapter(this, categoryList, db);
         quizList.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         quizList.setAdapter(quizListAdapter);
 

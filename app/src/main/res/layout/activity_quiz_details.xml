@@ -8,6 +8,7 @@
     android:orientation="vertical">
 
     <TextView
+        android:id="@+id/topic"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Topic"
@@ -19,6 +20,7 @@
 
 
     <TextView
+        android:id="@+id/question"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -38,9 +40,9 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:layout_marginBottom="32dp"
         android:gravity="center_horizontal">
 
     <TextView
@@ -49,6 +51,7 @@
         android:layout_height="wrap_content"
         android:textColor="@android:color/black"
         android:textSize="20sp"
+        android:onClick="nextQues"
         android:text="Option 1"
         android:layout_marginBottom="16dp"/>
     <TextView
@@ -57,6 +60,7 @@
         android:layout_height="wrap_content"
         android:textColor="@android:color/black"
         android:layout_marginBottom="16dp"
+        android:onClick="nextQues"
         android:textSize="20sp"
         android:text="Option 2"/>
     <TextView
@@ -66,6 +70,7 @@
         android:textColor="@android:color/black"
         android:layout_marginBottom="16dp"
         android:textSize="20sp"
+        android:onClick="nextQues"
         android:text="Option 3"/>
     <TextView
         android:id="@+id/option_4"
@@ -74,7 +79,9 @@
         android:textColor="@android:color/black"
         android:layout_marginBottom="16dp"
         android:textSize="20sp"
+        android:onClick="nextQues"
         android:text="Option 4"/>
+
 
         </LinearLayout>
 

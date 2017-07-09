@@ -1,15 +1,24 @@
 package com.example.android.quizapp;
 
-/**
- * Created by hp pc on 09/07/2017.
- */
 
-public class Question {
+import java.io.Serializable;
+
+public class Question implements Serializable {
     public String question;
-    public String option1;
-    public String option2;
-    public String option3;
-    public String option4;
+    public String rawOptions;
+   public String[] options;
     public String answer;
+
+    public Question(String question, String rawOptions, String answer) {
+        this.question = question;
+        this.rawOptions = rawOptions;
+        this.answer = answer;
+        parseOptions();
+    }
+
+    public void parseOptions(){
+        options = rawOptions.split("\\s*,\\s*");
+
+    }
 
 }
