@@ -151,7 +151,7 @@ public class DBHelper extends SQLiteOpenHelper {
         // sorting orders
         String sortOrder =
                 COLUMN_USER_NAME + " ASC";
-        List<User> userList = new ArrayList<User>();
+        List<User> userList = new ArrayList<>();
 
         SQLiteDatabase db = this.getReadableDatabase();
 

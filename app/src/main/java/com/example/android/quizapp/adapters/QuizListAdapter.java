@@ -24,10 +24,10 @@ import java.util.List;
 public class QuizListAdapter extends RecyclerView.Adapter<QuizListAdapter.QuizViewHolder> {
 
 
-    private final Context context;
-    private List<Category> list;
+    final Context context;
+    List<Category> list;
     SQLiteDatabase db;
-    private List<Question> questionList = new ArrayList<>();
+    List<Question> questionList = new ArrayList<>();
 
     public QuizListAdapter(Context context, List<Category> list, SQLiteDatabase db) {
         this.context = context;
@@ -58,7 +58,7 @@ public class QuizListAdapter extends RecyclerView.Adapter<QuizListAdapter.QuizVi
 
         TextView topicName;
 
-        public QuizViewHolder(View itemView) {
+        QuizViewHolder(View itemView) {
             super(itemView);
             itemView.setOnClickListener(this);
             topicName = (TextView) itemView.findViewById(R.id.quiz_topic);
@@ -67,7 +67,6 @@ public class QuizListAdapter extends RecyclerView.Adapter<QuizListAdapter.QuizVi
 
         @Override
         public void onClick(View view) {
-            String TAG = "ye raha";
 
             Cursor res = db.rawQuery("select * from " + DBContract.DBEntry.TABLE_NAME_2 + " where " +
                     DBContract.DBEntry.COLUMN_ID + "=" + list.get(getAdapterPosition()).getId() + ";", null);

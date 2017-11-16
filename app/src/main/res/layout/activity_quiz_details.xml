@@ -2,7 +2,8 @@
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    >
 
 
     <LinearLayout
@@ -10,7 +11,8 @@
         android:layout_height="match_parent"
         android:gravity="center_horizontal"
         android:orientation="vertical"
-        tools:context="com.example.android.quizapp.activities.QuizDetailsActivity">
+        tools:context="com.example.android.quizapp.activities.QuizDetailsActivity"
+        >
 
         <TextView
             android:id="@+id/topic"
@@ -18,9 +20,10 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:gravity="center"
-            android:text="Topic"
+            android:text="@string/topic"
             android:textColor="@android:color/black"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            />
 
 
         <TextView
@@ -32,22 +35,25 @@
             android:layout_marginRight="8dp"
             android:layout_marginTop="16dp"
             android:gravity="center"
-            android:text="What is the name of the book by JK Rowling?"
             android:textColor="@android:color/black"
             android:textSize="28sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            tools:text="What is the name of the book by JK Rowling?"
+            />
 
         <View
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="32dp"
             android:gravity="center_horizontal"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            >
 
             <TextView
                 android:id="@+id/option_1"
@@ -57,9 +63,10 @@
                 android:background="#F0F4C3"
                 android:gravity="center"
                 android:onClick="optionClicked"
-                android:text="Option 1"
                 android:textColor="@android:color/black"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                tools:text="Option 1"
+                />
 
             <TextView
                 android:id="@+id/option_2"
@@ -69,9 +76,10 @@
                 android:background="#F0F4C3"
                 android:gravity="center"
                 android:onClick="optionClicked"
-                android:text="Option 2"
                 android:textColor="@android:color/black"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                tools:text="Option 2"
+                />
 
             <TextView
                 android:id="@+id/option_3"
@@ -81,9 +89,10 @@
                 android:background="#F0F4C3"
                 android:gravity="center"
                 android:onClick="optionClicked"
-                android:text="Option 3"
                 android:textColor="@android:color/black"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                tools:text="Option 3"
+                />
 
             <TextView
                 android:id="@+id/option_4"
@@ -93,9 +102,10 @@
                 android:background="#F0F4C3"
                 android:gravity="center"
                 android:onClick="optionClicked"
-                android:text="Option 4"
                 android:textColor="@android:color/black"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                tools:text="Option 4"
+                />
 
 
         </LinearLayout>
@@ -110,23 +120,26 @@
         android:background="@android:color/holo_orange_light"
         android:orientation="vertical"
         android:padding="16dp"
-        android:visibility="invisible">
+        android:visibility="invisible"
+        >
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Your score is: "
+            android:text="@string/your_score_is"
             android:textColor="@android:color/black"
-            android:textSize="24sp" />
+            android:textSize="24sp"
+            />
 
         <TextView
             android:id="@+id/score_textview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="4/5"
             android:textColor="@android:color/black"
-            android:textSize="24sp" />
+            android:textSize="24sp"
+            tools:text="4/5"
+            />
 
         <Button
             android:id="@+id/play_again_button"
@@ -134,7 +147,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="8dp"
-            android:text="PLAY AGAIN?" />
+            android:text="@string/play_again"
+            />
 
     </LinearLayout>
 </android.support.design.widget.CoordinatorLayout>

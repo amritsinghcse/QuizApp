@@ -13,10 +13,6 @@ public class Question implements Serializable {
         return question;
     }
 
-    public String getRawOptions() {
-        return rawOptions;
-    }
-
     public String[] getOptions() {
         return options;
     }
@@ -34,7 +30,7 @@ public class Question implements Serializable {
         parseOptions();
     }
 
-    public void parseOptions(){
+    private void parseOptions(){
         options = rawOptions.split("\\s*,\\s*");
 
     }

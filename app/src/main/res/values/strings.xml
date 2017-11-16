@@ -5,4 +5,11 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
+    <string name="topic">Topic</string>
+    <string name="your_score_is">Your score is:</string>
+    <string name="play_again">PLAY AGAIN?</string>
+    <string name="name">Name</string>
+    <string name="password">Password</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="email">Email</string>
 </resources>
